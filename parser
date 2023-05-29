@@ -10,4 +10,4 @@ def parser(url):
     with open('file.txt', 'w') as f:
         for elem in fac:
             f.write(elem)
-        f.write('\n')
+            f.write('\n')
