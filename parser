@@ -1,0 +1,13 @@
+from bs4 import BeautifulSoup
+import requests
+
+def parser(url):
+    page = requests.get(url)
+    soup = BeautifulSoup(page.text, 'html.parser')
+    fac = []
+    for data in soup.find_all('h2'):
+        fac.append(data.text)
+    with open('file.txt', 'w') as f:
+        for elem in fac:
+            f.write(elem)
+        f.write('\n')
